@@ -21,7 +21,7 @@
             <input type="number" id="length" placeholder="Enter pipe length (feet)" step="0.1" required>
             <label for="cFactor">Hazen-Williams C Factor:</label>
             <input type="number" id="cFactor" placeholder="Enter C factor (e.g., 120)" step="1" required>
-            <p class="explanation">Typical C values: 120–150 for new steel/iron pipes, 100–120 for older pipes, or 140 for smooth pipes like plastic. Formula: Hf = 10.44 * (Q/C)^1.85 * L / D^4.87, where Q is in GPM, L in feet, D in inches, and C is dimensionless.</p>
+            <p class="explanation">Typical C values: 120–150 for new steel/iron pipes, 100–120 for older pipes, or 140 for smooth pipes like plastic.</p>
             <button type="button" onclick="calculateFrictionLoss()" class="btn">Calculate</button>
         </form>
         <div id="result" class="result"></div>
