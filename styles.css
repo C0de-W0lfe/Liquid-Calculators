@@ -155,3 +155,56 @@ footer a:hover {
         padding: 0 10px;
     }
 }
+
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000; /* Black background for content */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section h2 {
+    font-size: 1.5em;
+    color: #007bff; /* Blue for headings, matching buttons */
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-section li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.about-section li::before {
+    content: "✓"; /* Checkmark for list items */
+    color: #007bff;
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+}
+
+.about-section li strong {
+    color: #fff; /* Ensure bold text is white for contrast */
+}
