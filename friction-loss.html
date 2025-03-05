@@ -9,16 +9,16 @@
 <body>
     <header>
         <h1>Friction Loss Calculator</h1>
-        <p>Calculate head loss due to friction in pipes</p>
+        <p>Calculate head loss in pipes</p>
     </header>
     <main>
         <form class="calculator">
             <label for="flow">Flow Rate (GPM):</label>
             <input type="number" id="flow" placeholder="Enter flow rate" step="0.1" required>
-            <label for="length">Hose Length (ft):</label>
-            <input type="number" id="length" placeholder="Enter length" step="0.1" required>
-            <label for="diameter">Hose Diameter (in):</label>
-            <input type="number" id="diameter" placeholder="Enter diameter" step="0.1" required>
+            <label for="length">Pipe Length (ft):</label>
+            <input type="number" id="length" placeholder="Enter pipe length" step="0.1" required>
+            <label for="diameter">Pipe Diameter (in):</label>
+            <input type="number" id="diameter" placeholder="Enter pipe diameter" step="0.1" required>
             <button type="button" onclick="calculateFrictionLoss()" class="btn">Calculate</button>
         </form>
         <div id="result" class="result"></div>
