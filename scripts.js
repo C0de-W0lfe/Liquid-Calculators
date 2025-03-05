@@ -52,8 +52,10 @@ function calculateVelocity() {
         let flowCFS = flowRate * 0.002228; // 1 GPM = 0.002228 CFS
         // Convert pipe diameter from inches to feet
         let diameterFT = pipeDiameter / 12; // 1 inch = 1/12 feet
-        // Calculate cross-sectional area in square feet
-        let area = Math.PI * Math.pow(diameterFT, 2);
+        // Calculate radius in feet
+        let radiusFT = diameterFT / 2; // Radius = Diameter / 2
+        // Calculate cross-sectional area in square feet: A = π * r^2
+        let area = Math.PI * Math.pow(radiusFT, 2);
         // Calculate velocity in ft/s
         let velocity = flowCFS / area;
 
