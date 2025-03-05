@@ -158,30 +158,33 @@ footer a:hover {
 
 
 .about-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #000; /* Black background for content */
+    padding: 40px;
+    background-color: #000; /* Black background */
     color: #fff; /* White text */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-.about-section {
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow for a premium look */
     margin-bottom: 30px;
 }
 
+.about-section {
+    margin-bottom: 40px;
+}
+
 .about-section h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #007bff; /* Blue for headings, matching buttons */
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff; /* Professional underline for headings */
+    padding-bottom: 10px;
 }
 
 .about-section p {
     font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    line-height: 1.8; /* Improved readability */
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Slightly lighter white for better contrast */
 }
 
 .about-section ul {
@@ -191,10 +194,11 @@ footer a:hover {
 
 .about-section li {
     font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    padding-left: 20px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 25px;
     position: relative;
+    color: #e0e0e0;
 }
 
 .about-section li::before {
@@ -202,9 +206,58 @@ footer a:hover {
     color: #007bff;
     position: absolute;
     left: 0;
-    font-size: 1em;
+    font-size: 1.2em;
+    top: 2px;
 }
 
 .about-section li strong {
     color: #fff; /* Ensure bold text is white for contrast */
+}
+
+.intro p {
+    font-style: italic; /* Optional: Add a subtle emphasis to the intro */
+}
+
+.btn {
+    display: block;
+    margin: 30px auto 0; /* Center and add more spacing above */
+    width: fit-content;
+    padding: 12px 24px; /* Slightly larger button for a premium feel */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1em;
+    color: #ccc;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 20px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .about-section h2 {
+        font-size: 1.5em;
+    }
+
+    .about-section p, .about-section li {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
 }
