@@ -6,7 +6,7 @@ function sendEmail() {
     if (name && email && message) {
         let subject = encodeURIComponent(`Message from ${name}`);
         let body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-        let mailtoLink = `mailto:c0de-w0lfe@example.com?subject=${subject}&body=${body}`;
+        let mailtoLink = `mailto:c0de-w0lfe@proton.me?subject=${subject}&body=${body}`;
         window.location.href = mailtoLink;
         document.getElementById("result").innerText = "Email sent! Check your email client to complete.";
     } else {
