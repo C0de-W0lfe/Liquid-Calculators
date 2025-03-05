@@ -18,16 +18,28 @@ function sendEmail() {
 
 // Friction Loss Calculator
 function calculateFrictionLoss() {
-    let flow = parseFloat(document.getElementById("flow").value);
-    let length = parseFloat(document.getElementById("length").value);
-    let diameter = parseFloat(document.getElementById("diameter").value);
-    if (flow && length && diameter) {
-        let loss = (0.002 * Math.pow(flow, 1.85) * length) / Math.pow(diameter, 4.87);
-        document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} psi`;
+    let flow = parseFloat(document.getElementById("flow").value); // GPM
+    let diameter = parseFloat(document.getElementById("diameter").value); // inches
+    let length = parseFloat(document.getElementById("length").value); // feet
+    let cFactor = parseFloat(document.getElementById("cFactor").value); // Hazen-Williams C factor
+
+    if (flow && diameter && length && cFactor) {
+        // Convert flow from GPM to CFS (cubic feet per second)
+        let flowCFS = flow * 0.002228; // 1 GPM = 0.002228 CFS
+        // Convert diameter from inches to feet
+        let diameterFT = diameter / 12; // 1 inch = 1/12 feet
+
+        // Hazen-Williams formula for head loss in feet
+        let loss = 10.67 * length * (Math.pow(flowCFS, 1.852)) / (Math.pow(cFactor, 1.852) * Math.pow(diameterFT, 4.87));
+
+        document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} ft`;
     } else {
         document.getElementById("result").innerText = "Please enter all values.";
     }
 }
+
+
+
 
 // Velocity Calculator
 function calculateVelocity() {
