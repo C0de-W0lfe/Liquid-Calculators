@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Gauge Calculator - Liquid Flow Calculators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Level Gauge Calculator</h1>
+        <p>Calculate liquid levels and volumes in tanks</p>
+    </header>
+    <main>
+        <form class="calculator">
+            <label for="tank-height">Tank Height (ft):</label>
+            <input type="number" id="tank-height" placeholder="Enter tank height" step="0.1">
+            <label for="liquid-level">Current Level (ft):</label>
+            <input type="number" id="liquid-level" placeholder="Enter current level" step="0.1">
+            <label for="tank-volume">Tank Volume (gal):</label>
+            <input type="number" id="tank-volume" placeholder="Enter tank volume" step="1">
+            <button type="button" onclick="calculateLevel()" class="btn">Calculate</button>
+        </form>
+        <div id="result" class="result"></div>
+        <a href="index.html" class="btn">Back to Calculators</a>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
