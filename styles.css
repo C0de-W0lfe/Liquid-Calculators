@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #1a1a1a; /* Dark background from the image */
+    background-color: #1a1a1a; /* Dark background */
     padding: 20px;
     color: #fff; /* Default text color for dark background */
 }
@@ -14,7 +14,7 @@ body {
 header {
     text-align: center;
     margin-bottom: 30px;
-    color: #fff; /* Ensure header text is white */
+    color: #fff;
 }
 
 header h1 {
@@ -36,14 +36,14 @@ header p {
 }
 
 .card {
-    background-color: white;
+    background-color: #000; /* Black background for cards, matching the image */
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
     width: 300px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for contrast */
-    color: #333; /* Dark text on white cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Strong shadow for contrast */
+    color: #fff; /* White text on black cards, matching the image */
 }
 
 .card:hover {
@@ -52,15 +52,16 @@ header p {
 }
 
 .btn {
-    background-color: #007bff; /* Blue buttons from the image */
+    background-color: #007bff; /* Blue buttons */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
+    display: block; /* Ensures the button is centered as a block element */
+    margin: 10px auto 0; /* Centers the button horizontally with top margin */
+    width: fit-content; /* Prevents the button from stretching */
 }
 
 .btn:hover {
@@ -77,9 +78,8 @@ header p {
     width: 300px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #333; /* Darker input background to match theme */
+    background-color: #333; /* Darker input background */
     color: #fff; /* White text for contrast */
-    placeholder-color: #ccc; /* Placeholder text color, if supported */
 }
 
 form {
@@ -92,7 +92,7 @@ form {
 
 label {
     font-size: 1.1em;
-    color: #333;
+    color: #fff; /* White text for labels on dark background */
 }
 
 input {
