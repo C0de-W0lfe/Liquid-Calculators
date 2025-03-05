@@ -1,3 +1,21 @@
+function sendEmail() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    if (name && email && message) {
+        let subject = encodeURIComponent(`Message from ${name}`);
+        let body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        let mailtoLink = `mailto:c0de-w0lfe@example.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+        document.getElementById("result").innerText = "Email sent! Check your email client to complete.";
+    } else {
+        document.getElementById("result").innerText = "Please fill in all fields.";
+    }
+}
+
+
+
 function calculateFrictionLoss() {
     const pipeLength = parseFloat(document.getElementById("pipe-length").value);
     const pipeDiameter = parseFloat(document.getElementById("pipe-diameter").value) / 12; // Convert inches to feet
