@@ -16,36 +16,32 @@ function sendEmail() {
 
 
 
+// Friction Loss Calculator
 function calculateFrictionLoss() {
-    const pipeLength = parseFloat(document.getElementById("pipe-length").value);
-    const pipeDiameter = parseFloat(document.getElementById("pipe-diameter").value) / 12; // Convert inches to feet
-    const flowVelocity = parseFloat(document.getElementById("flow-velocity").value);
-    const frictionFactor = parseFloat(document.getElementById("friction-factor").value);
-    const g = 32.2; // ft/s²
-
-    if (pipeLength <= 0 || pipeDiameter <= 0 || flowVelocity <= 0 || frictionFactor <= 0) {
-        document.getElementById("friction-loss-result").innerHTML = "Please enter valid positive values.";
-        return;
+    let flow = parseFloat(document.getElementById("flow").value);
+    let length = parseFloat(document.getElementById("length").value);
+    let diameter = parseFloat(document.getElementById("diameter").value);
+    if (flow && length && diameter) {
+        let loss = (0.002 * Math.pow(flow, 1.85) * length) / Math.pow(diameter, 4.87);
+        document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} psi`;
+    } else {
+        document.getElementById("result").innerText = "Please enter all values.";
     }
-
-    const headLoss = frictionFactor * (pipeLength / pipeDiameter) * (Math.pow(flowVelocity, 2) / (2 * g));
-    document.getElementById("friction-loss-result").innerHTML = `Head Loss: ${headLoss.toFixed(2)} ft`;
 }
 
+// Velocity Calculator
 function calculateVelocity() {
-    const flowRate = parseFloat(document.getElementById("flow-rate").value) * 0.002228; // Convert gpm to ft³/s
-    const pipeDiameter = parseFloat(document.getElementById("pipe-diameter-velocity").value) / 12; // Convert inches to feet
-
-    if (flowRate <= 0 || pipeDiameter <= 0) {
-        document.getElementById("velocity-result").innerHTML = "Please enter valid positive values.";
-        return;
+    let flowRate = parseFloat(document.getElementById("flow-rate").value);
+    let pipeDiameter = parseFloat(document.getElementById("pipe-diameter").value);
+    if (flowRate && pipeDiameter) {
+        let velocity = (4 * flowRate) / (Math.PI * Math.pow(pipeDiameter, 2));
+        document.getElementById("result").innerText = `Velocity: ${velocity.toFixed(2)} ft/s`;
+    } else {
+        document.getElementById("result").innerText = "Please enter all values.";
     }
-
-    const area = Math.PI * Math.pow(pipeDiameter, 2) / 4;
-    const velocity = flowRate / area;
-    document.getElementById("velocity-result").innerHTML = `Flow Velocity: ${velocity.toFixed(2)} ft/s`;
 }
 
+// Level Gauge Calculator
 function calculateLevel() {
     let tankHeight = parseFloat(document.getElementById("tank-height").value);
     let liquidLevel = parseFloat(document.getElementById("liquid-level").value);
