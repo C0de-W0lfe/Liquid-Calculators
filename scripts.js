@@ -24,9 +24,9 @@ function calculateFrictionLoss() {
     let cFactor = parseFloat(document.getElementById("cFactor").value); // Hazen-Williams C factor
 
     if (flow && diameter && length && cFactor) {
-        // Hazen-Williams formula for head loss in feet: Hf = 10.5 * (Q/C)^1.852 * L / D^-4.87
+        // Hazen-Williams formula for head loss in feet: Hf = 10.44 * (Q/C)^1.85 * L / D^4.87
         // Q in GPM, D in inches, L in feet, C dimensionless
-        let loss = 10.5 * (flow / cFactor)^1.852 * length / Math.pow(diameter, -4.87);
+        let loss = 10.44 * (flow / cFactor)^1.85 * length / Math.pow(diameter, 4.87);
 
         document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} ft`;
     } else {
