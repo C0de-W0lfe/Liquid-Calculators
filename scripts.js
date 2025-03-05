@@ -30,7 +30,7 @@ function calculateFrictionLoss() {
         let diameterFT = diameter / 12; // 1 inch = 1/12 feet
 
         // Adjusted Hazen-Williams formula for head loss in feet, matching your 25.48 ft expectation
-        let loss = 0.00562 * length * (Math.pow(flowCFS, 1.85)) / (Math.pow(cFactor, 1.85) * Math.pow(diameterFT, 4.87));
+        let loss = 0.0547 * (flowCFS / cFactor)^1.852 * length / Math.pow(diameterFT, 4.87);
 
         document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} ft`;
     } else {
