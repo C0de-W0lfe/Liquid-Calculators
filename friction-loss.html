@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Friction Loss Calculator</h1>
-        <p>Calculate head loss in pipes</p>
+        <p>Calculate head loss in pipes (in feet)</p>
     </header>
     <main>
         <form class="calculator">
@@ -19,6 +19,9 @@
             <input type="number" id="diameter" placeholder="Enter pipe diameter" step="0.1" required>
             <label for="length">Pipe Length (ft):</label>
             <input type="number" id="length" placeholder="Enter pipe length" step="0.1" required>
+            <label for="cFactor">Hazen-Williams C Factor:</label>
+            <input type="number" id="cFactor" placeholder="Enter C factor (e.g., 140)" step="1" required>
+            <p class="explanation">Typical C values: 120–150 for new steel/iron pipes, 100–120 for older pipes, or 140 for smooth pipes like plastic.</p>
             <button type="button" onclick="calculateFrictionLoss()" class="btn">Calculate</button>
         </form>
         <div id="result" class="result"></div>
