@@ -27,3 +27,18 @@ function calculateVelocity() {
     const velocity = flowRate / area;
     document.getElementById("velocity-result").innerHTML = `Flow Velocity: ${velocity.toFixed(2)} ft/s`;
 }
+
+function calculateLevel() {
+    let tankHeight = parseFloat(document.getElementById("tank-height").value);
+    let liquidLevel = parseFloat(document.getElementById("liquid-level").value);
+    let tankVolume = parseFloat(document.getElementById("tank-volume").value);
+
+    if (tankHeight && liquidLevel && tankVolume && liquidLevel <= tankHeight) {
+        let percentage = (liquidLevel / tankHeight) * 100;
+        let currentVolume = (liquidLevel / tankHeight) * tankVolume;
+        document.getElementById("result").innerHTML = 
+            `Level: ${percentage.toFixed(2)}% full<br>Current Volume: ${currentVolume.toFixed(2)} gal`;
+    } else {
+        document.getElementById("result").innerText = "Please enter valid values (level ≤ height).";
+    }
+}
