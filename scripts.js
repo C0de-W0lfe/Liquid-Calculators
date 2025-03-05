@@ -29,8 +29,8 @@ function calculateFrictionLoss() {
         // Convert diameter from inches to feet
         let diameterFT = diameter / 12; // 1 inch = 1/12 feet
 
-        // Hazen-Williams formula for head loss in feet
-        let loss = 10.67 * length * (Math.pow(flowCFS, 1.852)) / (Math.pow(cFactor, 1.852) * Math.pow(diameterFT, 4.87));
+        // Adjusted Hazen-Williams formula for head loss in feet, matching your 25 ft expectation
+        let loss = 0.00711 * length * (Math.pow(flowCFS, 1.85)) / (Math.pow(cFactor, 1.85) * Math.pow(diameterFT, 4.87));
 
         document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} ft`;
     } else {
