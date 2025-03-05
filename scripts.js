@@ -14,6 +14,11 @@ function sendEmail() {
     }
 }
 
+
+
+
+
+
 // Friction Loss Calculator
 function calculateFrictionLoss() {
     let flow = parseFloat(document.getElementById("flow").value); // GPM
@@ -36,17 +41,33 @@ function calculateFrictionLoss() {
 
 
 
+
 // Velocity Calculator
 function calculateVelocity() {
-    let flowRate = parseFloat(document.getElementById("flow-rate").value);
-    let pipeDiameter = parseFloat(document.getElementById("pipe-diameter").value);
+    let flowRate = parseFloat(document.getElementById("flow-rate").value); // GPM
+    let pipeDiameter = parseFloat(document.getElementById("pipe-diameter").value); // inches
+
     if (flowRate && pipeDiameter) {
-        let velocity = (4 * flowRate) / (Math.PI * Math.pow(pipeDiameter, 2));
+        // Convert flow rate from GPM to CFS (cubic feet per second)
+        let flowCFS = flowRate * 0.002228; // 1 GPM = 0.002228 CFS
+        // Convert pipe diameter from inches to feet
+        let diameterFT = pipeDiameter / 12; // 1 inch = 1/12 feet
+        // Calculate cross-sectional area in square feet
+        let area = Math.PI * Math.pow(diameterFT, 2);
+        // Calculate velocity in ft/s
+        let velocity = flowCFS / area;
+
         document.getElementById("result").innerText = `Velocity: ${velocity.toFixed(2)} ft/s`;
     } else {
         document.getElementById("result").innerText = "Please enter all values.";
     }
 }
+
+
+
+
+
+
 
 // Level Gauge Calculator
 function calculateLevel() {
