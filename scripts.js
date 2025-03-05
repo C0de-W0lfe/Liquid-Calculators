@@ -41,7 +41,6 @@ function calculateFrictionLoss() {
 
 
 
-
 // Velocity Calculator
 function calculateVelocity() {
     let flowRate = parseFloat(document.getElementById("flow-rate").value); // GPM
@@ -55,7 +54,7 @@ function calculateVelocity() {
         // Calculate radius in feet
         let radiusFT = diameterFT / 2; // Radius = Diameter / 2
         // Calculate cross-sectional area in square feet: A = π * r^2
-        let area = Math.PI * Math.pow(radiusFT, 2);
+        let area = Math.PI * Math.pow(radiusFT, 2); // Ensure using radiusFT, not diameterFT
         // Calculate velocity in ft/s
         let velocity = flowCFS / area;
 
