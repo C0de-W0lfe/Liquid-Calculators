@@ -9,14 +9,14 @@
 <body>
     <header>
         <h1>Velocity Calculator</h1>
-        <p>Calculate flow velocity in pipes</p>
+        <p>Calculate flow velocity in pipes (in ft/s)</p>
     </header>
     <main>
         <form class="calculator">
             <label for="flow-rate">Flow Rate (GPM):</label>
-            <input type="number" id="flow-rate" placeholder="Enter flow rate" step="0.1" required>
+            <input type="number" id="flow-rate" placeholder="Enter flow rate (GPM)" step="0.1" required>
             <label for="pipe-diameter">Pipe Diameter (in):</label>
-            <input type="number" id="pipe-diameter" placeholder="Enter diameter" step="0.1" required>
+            <input type="number" id="pipe-diameter" placeholder="Enter pipe diameter (inches)" step="0.1" required>
             <button type="button" onclick="calculateVelocity()" class="btn">Calculate</button>
         </form>
         <div id="result" class="result"></div>
