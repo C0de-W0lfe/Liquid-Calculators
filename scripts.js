@@ -14,8 +14,6 @@ function sendEmail() {
     }
 }
 
-
-
 // Friction Loss Calculator
 function calculateFrictionLoss() {
     let flow = parseFloat(document.getElementById("flow").value); // GPM
@@ -26,13 +24,14 @@ function calculateFrictionLoss() {
     if (flow && diameter && length && cFactor) {
         // Hazen-Williams formula for head loss in feet: Hf = 10.44 * (Q/C)^1.85 * L / D^4.87
         // Q in GPM, D in inches, L in feet, C dimensionless
-        let loss = 10.44 * (flow / cFactor)^1.85 * length / Math.pow(diameter, 4.87);
+        let loss = 10.44 * Math.pow(flow / cFactor, 1.85) * length / Math.pow(diameter, 4.87);
 
         document.getElementById("result").innerText = `Friction Loss: ${loss.toFixed(2)} ft`;
     } else {
         document.getElementById("result").innerText = "Please enter all values.";
     }
 }
+
 
 
 
